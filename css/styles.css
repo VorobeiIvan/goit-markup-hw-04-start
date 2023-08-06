@@ -48,7 +48,7 @@ START Style Guide
 
 
 
-    
+
 
 
     /* 
@@ -71,9 +71,9 @@ START Style Guide
     --h1-font-size: 56px;
     --h1-font-style: normal;
     --h1-font-weight: 700;
-    --h1-line-height: calc(60px / --h1-font-size);
+    --h1-line-height: calc(60px / var(--h1-font-size));
     /* 107.143% */
-    letter-spacing: calc(1.12px / --h1-font-size);
+    --h1-letter-spacing: calc(1.12px / var(--h1-font-size));
     /*  0,02em*/
 
     /* ========== ========== Header 2 | title | h2 ========== ========== */
@@ -84,6 +84,7 @@ START Style Guide
     --h2-line-height: calc(40px / var(--h2-font-size));
     /* 111.111% */
     --h2-letter-spacing: calc(.72px / var(--h2-font-size));
+    /*  0,02em*/
     /* text-transform: capitalize; */
 
     /* ========== ========== Header 3 | subtitle | h3 ========== ========== */
@@ -167,49 +168,31 @@ p {
     margin-block: 0;
 }
 
-ul,ol {
-    margin-block: 0;
-    padding-left: 0;
-    list-style: none;
-}
-
-img,svg {
+img,
+svg {
     display: block;
-    max-width: 100%;
-}
-
-button {
-    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* ======================================== General tag selector values ========================================  */
 
 body {
-    font-family: var(--body-font-family);
-    font-weight: var(--body-font-weight);
-    font-size: var(--body-font-size);
-    letter-spacing: var(--body-letter-spacing);
-    line-height: var(--body-line-height);
+    font-family: var(--body-font-family, "Roboto", sans-serif);
+    font-weight: var(--body-font-weight, 400);
+    font-size: var(--body-font-size, 16px);
+    letter-spacing: var(--body-letter-spacing, 0.02em);
+    line-height: var(--body-line-height, 1.5);
 
-    color: var(--crl-text);
+    color: var(--crl-text, #434455);
     background-color: var(--crl-white-background);
-}
-
-button {
-    font-family: var(--button-font-family);
-    font-size: var(--button-font-size);
-    font-weight: var(--button-font-weight);
-    line-height: var(--button-line-height);
-    letter-spacing: var(--button-letter-spacing);
-
-    cursor: pointer;
 }
 
 address {
     font-style: normal;
 }
-
-
 
 /* ======================================== General helper classes ========================================  */
 .visually-hidden {
@@ -228,16 +211,105 @@ address {
 
 .container {
     width: 1158px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin-inline: auto;
+    padding-inline: 15px;
 }
 
 .link {
     text-decoration-line: none;
-    color: var(--color-slate-body-text);
+    color: var(--crl-text, #434455);
 }
+
+.list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.main-title {
+    font-size: var(--h1-font-size, 56px);
+
+    font-weight: var(--h1-font-weight, 700);
+    /* перевірити чи не по замовчуванню в браузера */
+
+    line-height: var(--h1-line-height, 1.07);
+    letter-spacing: var(--h1-letter-spacing, 0.02em);
+}
+
+.title {
+    font-size: var(--h2-font-size, 36px);
+    font-weight: var(--h2-font-weight, 700);
+    line-height: var(--h2-line-height, 1.11);
+    letter-spacing: var(--h2-letter-spacing, 0.02em);
+
+    color: var(--crl-dark, #2E2F42);
+    text-transform: capitalize;
+}
+
+.subtitle {
+    font-size: var(--h3-font-size, 20px);
+    font-weight: var(--h3-font-weight, 500);
+    line-height: var(--h3-line-height, 1.2);
+    letter-spacing: var(--h3-letter-spacing, 0.02em);
+    color: var(--crl-dark, #2E2F42);
+}
+
+.text {
+    letter-spacing: var(--body-letter-spacing, 0.02em);
+    line-height: var(--body-line-height, 1.5);
+    /* перевірити чи не по замовчуванню в браузера та чи не наслідується з боді */
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+}
+
+.btn {
+    font-family: var(--button-font-family, "Roboto", sans-serif);
+    font-size: var(--button-font-size, 16px);
+    font-weight: var(--button-font-weight, 500);
+    line-height: var(--button-line-height, 1.5);
+    letter-spacing: var(--button-letter-spacing, 0.04em);
+
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/*
+================================================================================ 
+------------------------------- MAIN CONTENT STYLES ----------------------------
+================================================================================ 
+*/
+
+/* ======================================== Logo ========================================  */
+.logo {
+    font-family: var(--logo-font-family, "Raleway", sans-serif);
+    font-size: var(--logo-font-size, 18px);
+    font-weight: var(--logo-font-weight, 800);
+    line-height: var(--logo-line-height, 1.17);
+    letter-spacing: var(--logo-letter-spacing, 0.03em);
+
+    color: var(--crl-primary-brand, #4D5AE5);
+
+    text-transform: uppercase;
+}
+
+.header-logo {
+    margin-right: auto;
+}
+
+.logo-dark {
+    color: var(--crl-dark,#2E2F42);
+}
+
+.logo-light {
+    color: var(--crl-light, #F4F4FD);
+}
+
+/* ======================================== END Logo ========================================  */
 
 
 /* ========== Header ==========  */
@@ -255,12 +327,10 @@ address {
 }
 
 .header-navigation {
-
     align-items: center;
 }
 
 .header-content {
-
     justify-content: space-between;
 }
 
@@ -270,31 +340,7 @@ address {
 }
 
 
-/*  ========== Logo ==========  */
-.logo {
-    font-family: var(--logo-font-family);
-    font-size: var(--logo-font-size);
-    font-weight: var(--logo-font-weight);
-    line-height: var(--logo-line-height);
-    letter-spacing: var(--logo-letter-spacing);
 
-    color: var(--color-iris-primary-brand);
-
-    text-transform: uppercase;
-
-}
-
-.logo-header {
-    margin-right: 76px;
-}
-
-ÍÍ .logo-dark {
-    color: var(--color-navy-blue-dark);
-}
-
-.logo-light {
-    color: var(--color-cloud-light);
-}
 
 /* ========== Navigation ==========  */
 .nav-link {
