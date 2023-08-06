@@ -149,6 +149,9 @@ START Style Guide
     /* 0.03em */
     /* text-transform: uppercase; */
 
+
+    /*==================== Other ====================*/
+
 }
 
 /*
@@ -238,16 +241,21 @@ address {
 }
 
 .title {
+    margin-bottom: 72px;
+    text-align: center;
+
     font-size: var(--h2-font-size, 36px);
     font-weight: var(--h2-font-weight, 700);
     line-height: var(--h2-line-height, 1.11);
     letter-spacing: var(--h2-letter-spacing, 0.02em);
 
     color: var(--crl-dark, #2E2F42);
+
     text-transform: capitalize;
 }
 
 .subtitle {
+    margin-bottom: 8px;
     font-size: var(--h3-font-size, 20px);
     font-weight: var(--h3-font-weight, 500);
     line-height: var(--h3-line-height, 1.2);
@@ -278,13 +286,26 @@ address {
 }
 
 
-/*
+/* 
 ================================================================================ 
-------------------------------- MAIN CONTENT STYLES ----------------------------
-================================================================================ 
+------------------------------ HEADER | SECTION 1 ------------------------------
+================================================================================  
 */
 
-/* ======================================== Logo ========================================  */
+/* ================================= Header =================================== */
+
+.main-header {
+    display: flex;
+    /* padding: 24px 0; */
+    border-bottom: 1px solid #e7e9fc;
+}
+
+.header-content-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ================================== Logo ==================================== */
 .logo {
     font-family: var(--logo-font-family, "Raleway", sans-serif);
     font-size: var(--logo-font-size, 18px);
@@ -302,75 +323,60 @@ address {
 }
 
 .logo-dark {
-    color: var(--crl-dark,#2E2F42);
+    color: var(--crl-dark, #2E2F42);
 }
 
 .logo-light {
     color: var(--crl-light, #F4F4FD);
 }
 
-/* ======================================== END Logo ========================================  */
-
-
-/* ========== Header ==========  */
-.main-header,
-.header-content,
-.header-navigation,
-.nav-list,
-.address-list {
-    display: flex;
-}
-
-.main-header {
-    padding: 24px 0;
-    border-bottom: 1px solid #e7e9fc;
-}
-
+/* ========================== Main header navigation ============================= */
 .header-navigation {
     align-items: center;
 }
 
-.header-content {
-    justify-content: space-between;
-}
-
-.nav-list,
-.address-list {
+.main-nav-list {
+    display: flex;
     gap: 40px;
 }
 
-
-
-
-/* ========== Navigation ==========  */
 .nav-link {
     padding: 24px 0;
-    color: var(--color-navy-blue-dark);
-    font-weight: var(--body-medium-font-weight);
+    color: var(--crl-dark, #2E2F42);
+    font-weight: var(--body-medium-font-weight, 500);
 }
 
 .nav-link:hover,
 .nav-link:focus {
-    color: var(--color-ocean-pressed-state);
-    border-bottom: 4px solid var(--color-ocean-pressed-state);
+    color: var(--crl-pressed-state, #404BBF);
+    border-bottom: 4px solid var(--crl-pressed-state, #404BBF);
     border-radius: 2px;
     padding-bottom: 20px;
 }
 
-
-
-/* ========== Contacts ==========  */
-
-.contact-link {
-    color: var(--color-slate-body-text);
+/* ========================== Contacts header ================================= */
+.contacts-list {
+    display: flex;
+    gap: 40px;
 }
 
 .contact-link:hover,
 .contact-link:focus {
-    color: var(--color-ocean-pressed-state);
+    color: var(--crl-pressed-state, #404BBF);
 }
 
-/*  ========== Hero ==========  */
+
+/*
+================================================================================ 
+------------------------------- MAIN CONTENT STYLES ----------------------------
+================================================================================ 
+*/
+
+/* 
+================================================================================ 
+                                 Hero | SECTION 2
+================================================================================  
+*/
 .section-hero {
     height: 600px;
     padding: 188px 0;
@@ -379,10 +385,10 @@ address {
     justify-content: center;
     align-items: center;
 
-    background: var(--color-navy-blue-dark);
+    background: var(--crl-dark, #2E2F42);
 }
 
-.content-hero {
+.hero-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -390,170 +396,167 @@ address {
     row-gap: 48px;
 }
 
-.title-hero {
+.hero-title {
     max-width: 496px;
-
-    color: var(--color-white-background);
-    font-size: var(--h1-font-size);
-    font-weight: var(--h1-font-weight);
-    line-height: var(--h1-line-height);
-    letter-spacing: var(--h1-letter-spacing);
-
+    color: var(--crl-white-background, #FFFFFF);
     text-align: center;
 }
 
-.button-hero {
+.hero-btn {
     min-width: 169px;
     padding: 16px 32px;
-
-    color: var(--color-white-background);
-    background-color: var(--color-iris-primary-brand);
-
+    color: var(--crl-white-background, #FFFFFF);
+    background-color: var(--crl-primary-brand, #4D5AE5);
     border: none;
-    border-radius: 4px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .button-hero:hover,
 .button-hero:focus {
-    background-color: var(--color-ocean-pressed-state);
+    background-color: var(--crl-pressed-state, #404BBF);
 }
 
-/*  ========== Advantages ==========  */
+/* 
+================================================================================ 
+                                Benefit | SECTION 3 
+================================================================================  
+*/
 
-.advantive-list,
-.skill-list,
-.our-team-list {
+.section-benefit {
+    padding: 120px 0;
+}
+
+.benefit-list {
     display: flex;
     justify-content: space-between;
     gap: 24px;
 }
 
-.section-advantages {
-    padding: 120px 0;
-}
-
-.advantive-list-item {
+.benefit-list-item {
     flex-basis: calc((100% - 3 * 24px) / 4);
 }
 
-.subtitle {
-    margin-bottom: 8px;
+/* 
+================================================================================ 
+                        What are we doing| Skills | SECTION 4 
+================================================================================  
+*/
 
-    font-size: var(--h3-font-size);
-    font-weight: var(--h3-font-weight);
-    line-height: var(--h3-line-height);
-    letter-spacing: var(--h3-letter-spacing);
-    color: var(--color-navy-blue-modal-overlay);
-}
-
-.text {
-    line-height: var(--line-height);
-    letter-spacing: var(--letter-spacing);
-}
-
-/* ========== What are we doing ==========  */
-
-.section-skill {
+.section-skills {
     padding-bottom: 120px;
 }
 
-.skill-list-item {
+.skills-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.skills-list-item {
     flex-basis: calc((100% - 3 * 16px) / 3);
 }
 
-.title {
-    margin-bottom: 72px;
+/* 
+================================================================================ 
+                             Our Team| Team | SECTION 5  
+================================================================================  
+*/
 
-    text-align: center;
-
-    font-size: var(--h2-font-size);
-    font-weight: var(--h2-font-weight);
-    line-height: var(--h2-line-height);
-    letter-spacing: var(--h2-letter-spacing);
-
-    color: var(--color-navy-blue-dark);
-
-    text-transform: capitalize;
-}
-
-/*  ========== Our-team ==========  */
-.section-our-team {
+.section-team {
     padding: 120px 0;
-    background: var(--color-cloud-light);
+    background: var(--crl-light,#F4F4FD );
+}
+.team-list{
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
 }
 
-.our-team-list-item {
+.team-list-item {
     flex-basis: calc((100% - 3 * 24px) / 4);
 
-    background-color: var(--color-white-background);
+    background-color: var(--crl-white-background, #FFFFFF);
     border-radius: 0px 0px 4px 4px;
-    background: var(--color-white-background);
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
-.tex-content-card {
+.text-content-box {
     padding: 32px 0;
     text-align: center;
 }
 
-/*  ========== Footer ========== */
-.footer {
-    background: var(--color-navy-blue-dark);
+/* 
+================================================================================ 
+                             Footer | SECTION 6  
+================================================================================  
+*/
+
+.main-footer {
+    background: var(--crl-dark, #2E2F42);
     padding: 100px 0;
 }
 
-.footer-text {
-    max-width: 264px;
-    color: var(--color-cloud-light);
-}
-
-.footer-link {
+.main-footer-link {
     display: inline-block;
     margin-bottom: 16px;
 }
 
+.main-footer-text{
+    max-width: 264px;
+    color: var(--crl-light,#F4F4FD );
+}
 
-/*  ==========  ========== Portfolio ==========  ==========  */
 
-.portfolio-card-section {
+
+/*
+================================================================================ 
+------------------------------------- PORTFOLIO --------------------------------
+================================================================================ 
+*/
+/* ============================ Portfolio | SECTION 2 ========================== */
+
+.portfolio-section {
     padding: 96px 0 120px 0;
     justify-content: space-between;
 }
 
-/* ========== Filtr ========== */
-.filter-list {
+/* ================= Filter | Portfolio secondary navigation =================== */
+.portfolio-filter-list {
     display: flex;
     justify-content: center;
     gap: 24px;
     margin-bottom: 72px;
 }
 
-.filter-button {
+.filter-btn {
     padding: 12px 24px;
 
-    border: 1px solid #e7e9fc;
-    border-radius: 4px;
-    color: var(--color-iris-primary-brand);
-    background-color: var(--color-cloud-light);
+    border: 1px solid var(--crl-accent,#e7e9fc);
+    color: var(--crl-primary-brand, #4D5AE5);
+    background-color: var(--crl-light,#F4F4FD );
 }
 
-.filter-button:hover,
-.filter-button:focus {
+.filter-btn:hover,
+.filter-btn:focus {
     border: 1px solid transparent;
-    color: var(--color-white-background);
-    background-color: var(--color-ocean-pressed-state);
+    color: var(--crl-white-background, #FFFFFF);
+    background-color: var(--crl-pressed-state, #404BBF);
 }
 
-/* ========== Cards ========== */
-.portfolio-text-conteiner {
+/* ========================= Cards | Portfolio cards ============================= */
+.portfolio-text-container {
     padding: 32px 16px;
-    border: 1px solid #e7e9fc;
+    border: 1px solid var(--crl-accent,#e7e9fc);
     border-top: none;
-
 }
 
-.card-list {
+.portfolio-text-container:hover,
+.portfolio-text-container:focus {
+    border: 1px solid var(--crl-light,#F4F4FD );
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-card-list {
     display: flex;
 
     flex-wrap: wrap;
@@ -563,21 +566,8 @@ address {
 
 .card-list-item {
     width: calc((100% - 48px) / 3);
-    background: var(--color-white-background);
-
-}
-
-.portfolio-text-conteiner:hover,
-.portfolio-text-conteiner:focus {
-    border: 1px solid var(--color-cloud-light);
-    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+    background: var(--crl-white-background, #FFFFFF);
 }
 
 
-.container {
-    width: 1158px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+
