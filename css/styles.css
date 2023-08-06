@@ -171,14 +171,14 @@ p {
     margin-block: 0;
 }
 
-img,
+/* img,
 svg {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-}
+} */
 
 /* ======================================== General tag selector values ========================================  */
 
@@ -296,7 +296,6 @@ address {
 
 .main-header {
     display: flex;
-    /* padding: 24px 0; */
     border-bottom: 1px solid #e7e9fc;
 }
 
@@ -319,7 +318,7 @@ address {
 }
 
 .header-logo {
-    margin-right: auto;
+    margin-right: 72px;
 }
 
 .logo-dark {
@@ -332,6 +331,7 @@ address {
 
 /* ========================== Main header navigation ============================= */
 .header-navigation {
+    display: flex;
     align-items: center;
 }
 
@@ -341,6 +341,7 @@ address {
 }
 
 .nav-link {
+    display: block;
     padding: 24px 0;
     color: var(--crl-dark, #2E2F42);
     font-weight: var(--body-medium-font-weight, 500);
@@ -360,6 +361,10 @@ address {
     gap: 40px;
 }
 
+.contact-link {
+    display: block;
+    padding: 24px 0;
+}
 .contact-link:hover,
 .contact-link:focus {
     color: var(--crl-pressed-state, #404BBF);
@@ -505,8 +510,6 @@ address {
     max-width: 264px;
     color: var(--crl-light,#F4F4FD );
 }
-
-
 
 /*
 ================================================================================ 
