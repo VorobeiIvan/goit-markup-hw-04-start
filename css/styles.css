@@ -46,11 +46,6 @@ START Style Guide
     --crl-modal-background: #FCFCFC;
     /* Dairy| Modal background | Modal background  */
 
-
-
-
-
-
     /* 
     ======================================== 
     TYPOGRAPHY 
@@ -137,7 +132,6 @@ START Style Guide
     /* 0.04em; */
     /* text-decoration-line: underline; */
 
-
     /* ========== ========== Logo ==========  ========== */
     --logo-font-family: "Raleway", sans-serif;
     --logo-font-size: 18px;
@@ -149,9 +143,7 @@ START Style Guide
     /* 0.03em */
     /* text-transform: uppercase; */
 
-
     /*==================== Other ====================*/
-
 }
 
 /*
@@ -184,7 +176,7 @@ svg {
 
 body {
     font-family: var(--body-font-family, "Roboto", sans-serif);
-    font-weight: var(--body-font-weight, 400);
+    /* font-weight: var(--body-font-weight, 400); */
     font-size: var(--body-font-size, 16px);
     letter-spacing: var(--body-letter-spacing, 0.02em);
     line-height: var(--body-line-height, 1.5);
@@ -233,11 +225,11 @@ address {
 .main-title {
     font-size: var(--h1-font-size, 56px);
 
-    font-weight: var(--h1-font-weight, 700);
-    /* перевірити чи не по замовчуванню в браузера */
+    /* font-weight: var(--h1-font-weight, 700);
+    перевірити чи не по замовчуванню в браузера */
 
     line-height: var(--h1-line-height, 1.07);
-    letter-spacing: var(--h1-letter-spacing, 0.02em);
+    /* letter-spacing: var(--h1-letter-spacing, 0.02em); */
 }
 
 .title {
@@ -245,9 +237,9 @@ address {
     text-align: center;
 
     font-size: var(--h2-font-size, 36px);
-    font-weight: var(--h2-font-weight, 700);
+    /* font-weight: var(--h2-font-weight, 700); */
     line-height: var(--h2-line-height, 1.11);
-    letter-spacing: var(--h2-letter-spacing, 0.02em);
+    /* letter-spacing: var(--h2-letter-spacing, 0.02em); */
 
     color: var(--crl-dark, #2E2F42);
 
@@ -256,18 +248,21 @@ address {
 
 .subtitle {
     margin-bottom: 8px;
+
     font-size: var(--h3-font-size, 20px);
     font-weight: var(--h3-font-weight, 500);
     line-height: var(--h3-line-height, 1.2);
-    letter-spacing: var(--h3-letter-spacing, 0.02em);
+    /* letter-spacing: var(--h3-letter-spacing, 0.02em); */
     color: var(--crl-dark, #2E2F42);
 }
 
+/* 
 .text {
+   
     letter-spacing: var(--body-letter-spacing, 0.02em);
     line-height: var(--body-line-height, 1.5);
-    /* перевірити чи не по замовчуванню в браузера та чи не наслідується з боді */
-}
+    перевірити чи не по замовчуванню в браузера та чи не наслідується з боді
+} */
 
 .image {
     display: block;
@@ -275,10 +270,10 @@ address {
 }
 
 .btn {
-    font-family: var(--button-font-family, "Roboto", sans-serif);
-    font-size: var(--button-font-size, 16px);
+    /* font-family: var(--button-font-family, "Roboto", sans-serif); */
+    /* font-size: var(--button-font-size, 16px); */
     font-weight: var(--button-font-weight, 500);
-    line-height: var(--button-line-height, 1.5);
+    /* line-height: var(--button-line-height, 1.5); */
     letter-spacing: var(--button-letter-spacing, 0.04em);
 
     border-radius: 4px;
@@ -365,6 +360,7 @@ address {
     display: block;
     padding: 24px 0;
 }
+
 .contact-link:hover,
 .contact-link:focus {
     color: var(--crl-pressed-state, #404BBF);
@@ -469,9 +465,10 @@ address {
 
 .section-team {
     padding: 120px 0;
-    background: var(--crl-light,#F4F4FD );
+    background: var(--crl-light, #F4F4FD);
 }
-.team-list{
+
+.team-list {
     display: flex;
     justify-content: space-between;
     gap: 24px;
@@ -506,9 +503,9 @@ address {
     margin-bottom: 16px;
 }
 
-.main-footer-text{
+.main-footer-text {
     max-width: 264px;
-    color: var(--crl-light,#F4F4FD );
+    color: var(--crl-light, #F4F4FD);
 }
 
 /*
@@ -534,9 +531,9 @@ address {
 .filter-btn {
     padding: 12px 24px;
 
-    border: 1px solid var(--crl-accent,#e7e9fc);
+    border: 1px solid var(--crl-accent, #e7e9fc);
     color: var(--crl-primary-brand, #4D5AE5);
-    background-color: var(--crl-light,#F4F4FD );
+    background-color: var(--crl-light, #F4F4FD);
 }
 
 .filter-btn:hover,
@@ -549,14 +546,8 @@ address {
 /* ========================= Cards | Portfolio cards ============================= */
 .portfolio-text-container {
     padding: 32px 16px;
-    border: 1px solid var(--crl-accent,#e7e9fc);
+    border: 1px solid var(--crl-accent, #e7e9fc);
     border-top: none;
-}
-
-.portfolio-text-container:hover,
-.portfolio-text-container:focus {
-    border: 1px solid var(--crl-light,#F4F4FD );
-    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-card-list {
@@ -572,5 +563,8 @@ address {
     background: var(--crl-white-background, #FFFFFF);
 }
 
-
-
+.card-list-item:hover,
+.card-list-item:focus {
+    /* border: 1px solid var(--crl-light, #F4F4FD); */
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
