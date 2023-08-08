@@ -517,6 +517,8 @@ border-radius: 2px;
 */
 
 .main-footer {
+    display: flex;
+    justify-content: flex-start;
     background: var(--crl-dark, #2E2F42);
     padding: 100px 0;
 }
@@ -531,6 +533,34 @@ border-radius: 2px;
     color: var(--crl-light, #F4F4FD);
 }
 
+
+/* 
+================================================================================ 
+                             Social media |   
+================================================================================  
+*/
+.social-media-box-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    background-color: #F4F4FD;
+    border-radius: 4px;
+    
+}
+
+.social-media-list {
+    display: flex ;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.social-media-list-item {
+
+width: 40px;
+height: 40px;
+    flex-basis: calc((100% - 3 * 24px) / 4);
+}
 
 /*
 ================================================================================ 
